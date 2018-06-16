@@ -1,5 +1,8 @@
 package com.example.yanirayanes.gamenews.TodoLoDeLaAPI;
 
+import com.example.yanirayanes.gamenews.PlainOldJavaObjects.Noticia;
+import com.example.yanirayanes.gamenews.PlainOldJavaObjects.Token;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
