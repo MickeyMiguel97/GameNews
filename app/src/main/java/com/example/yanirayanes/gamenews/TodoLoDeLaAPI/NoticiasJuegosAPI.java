@@ -3,6 +3,8 @@ package com.example.yanirayanes.gamenews.TodoLoDeLaAPI;
 import com.example.yanirayanes.gamenews.PlainOldJavaObjects.Noticia;
 import com.example.yanirayanes.gamenews.PlainOldJavaObjects.Token;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -13,19 +15,12 @@ import rx.Observable;
 
 public interface NoticiasJuegosAPI {
     //Obteniendo token
-    @POST("/loging")
+    @POST("/login")
     @FormUrlEncoded
-    Observable<Token> saveToken(@Field("user") String User,
-                                @Field("password") String Password);
+    Call<Token> savePost(@Field("User") String user, @Field("Password") String pass);
 
-    //Fin de LogIn
-
-    //Para las noticias
-    //Lista de noticias
     @GET("/news")
-    Call<Noticia[]> getNoticias(@Header("Authorization: ") String token);
-
-    //Fin de noticias
-
-    //
+    Call<List<Noticia>> getNews(
+            @Header("Authorization:") String Token
+    );
 }
