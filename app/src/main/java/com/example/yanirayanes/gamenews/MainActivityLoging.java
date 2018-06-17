@@ -45,6 +45,8 @@ public class MainActivityLoging extends AppCompatActivity {
                 String Password = EditTextPassword.getText().toString().trim();
                 if (!TextUtils.isEmpty(User) && !TextUtils.isEmpty(Password)) {
                     MandarToken(User, Password);
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
                 }
             }
         });
