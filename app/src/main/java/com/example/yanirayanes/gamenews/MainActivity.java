@@ -1,5 +1,6 @@
 package com.example.yanirayanes.gamenews;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.yanirayanes.gamenews.Adapter.RecyclerViewNoticias;
+import com.example.yanirayanes.gamenews.BaseDeDatos.NoticiasDAO;
 import com.example.yanirayanes.gamenews.PlainOldJavaObjects.Noticia;
 import com.example.yanirayanes.gamenews.TodoLoDeLaAPI.ApiEndPoint;
 import com.example.yanirayanes.gamenews.TodoLoDeLaAPI.NoticiasJuegosAPI;
@@ -44,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         String HelloWorld = "Hello World Im Alive";
         Log.d("alv",HelloWorld.replaceAll("",""));
         String getToken = getIntent().getStringExtra("Token");
-        CargarNoticias(getToken.replaceAll("",""));
+        CargarNoticias(getToken.replaceAll(" "," "));
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -76,12 +78,12 @@ public class MainActivity extends AppCompatActivity
         MiReVi.setLayoutManager(layoutManager);
     }
 
-    public void CargarNoticias(String token){
-        api.getNews(token).enqueue(new Callback<List<Noticia>>() {
+    public void CargarNoticias(String Token){
+        api.getNews(Token).enqueue(new Callback<List<Noticia>>() {
             @Override
             public void onResponse(Call<List<Noticia>> call, Response<List<Noticia>> response) {
                 if(response.isSuccessful()) {
-                    noticias= response.body();
+                    noticias = response.body();
                     //mResponseTv.setText(news[0].getTitle());
                     MiReVi.setAdapter(new RecyclerViewNoticias(noticias));
 
