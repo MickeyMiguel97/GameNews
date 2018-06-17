@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity
             public int getSpanSize(int position) {
                 switch (position % 3){
                     case 0:
-                        return 6;
+                        return 4;
                         //No se usa break; porque se esta retornando
                     case 1:
                     case 2:
-                        return 3;
+                        return 2;
                 }
                 throw new IllegalStateException("Error interno");
             }
