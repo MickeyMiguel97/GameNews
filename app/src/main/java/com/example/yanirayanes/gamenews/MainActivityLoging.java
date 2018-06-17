@@ -4,10 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +15,6 @@ import com.example.yanirayanes.gamenews.PlainOldJavaObjects.Token;
 import com.example.yanirayanes.gamenews.TodoLoDeLaAPI.ApiEndPoint;
 import com.example.yanirayanes.gamenews.TodoLoDeLaAPI.NoticiasJuegosAPI;
 
-import okhttp3.internal.Util;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

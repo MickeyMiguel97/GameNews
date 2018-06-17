@@ -10,3 +10,4 @@ public class ApiEndPoint {
         return AdaptacionDelCliente.getClient(ENDPOINT).create(NoticiasJuegosAPI.class);
     }
 }
+
